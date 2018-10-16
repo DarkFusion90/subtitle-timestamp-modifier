@@ -22,7 +22,6 @@ class Main {
   static Scanner scanner;
 
   public static void main(String[] args) {
-    scanner = new Scanner(System.in);
     FileWriter outputFile;
     try {
       outputFile = new FileWriter("changedSubs.srt");
@@ -40,7 +39,8 @@ class Main {
    *                      file)
    */
   static void operate(FileWriter outputFile, String inputFileName) {
-
+    scanner = new Scanner(System.in);
+    
     String pat = "([0-9]){2}:([0-9]){2}:([0-9]){2},([0-9]){1,}";
     Pattern pattern = Pattern.compile(pat);
     Matcher matcher;
